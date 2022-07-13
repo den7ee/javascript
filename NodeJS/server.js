@@ -2,7 +2,7 @@
 const http = require('http');
 const host = 'http://localhost';
 const porta = 3000;
-const stats =  './';
+const stats =  require('./pcRamUsage');
 
 //exibe o resultado do comando
 //console.log(http);
@@ -13,5 +13,11 @@ const stats =  './';
 
 //Criar de fato o servidor,  a porta 3000 e exibindo a resposta no log do console
 http.createServer((req, res) => {
-    res.end('<h1>Working...</h1>')
+    let url = req.url;
+
+    if (url == '/stats') {
+        res.end(JSON.stringify(stats, null, 2));
+    } else {
+        res.end('<h1>Seja bem-vindo');
+    }
 }).listen(porta, () => console.log(`Server is runing in ${host}:${porta}`));
