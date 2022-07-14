@@ -90,5 +90,3 @@ Alterar o valor "type" do package.json e o "commonjs" de tsconfig.json iguais co
 ## error An unexpected error occurred: "C:\\Users...\package.json: Unexpected string in JSON at position 206"
 Alterar o valor "type" do package.json e o "module" de tsconfig.json iguais com "module";
 
-## Error: Jest: Failed to parse the TypeScript config file C:\Users\...
-
